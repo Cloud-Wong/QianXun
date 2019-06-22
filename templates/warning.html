@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if unfinish_node!=null %}
+
+
+<h1>{{ node_event }}还有以下任务未完成</h1>
+     <ul>
+    {% for task in unfinish_node %}
+        <li>{{ task['event'] }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+<h1>{{ node_event }}异常节点</h1>
+     <ul>
+    {% for task in exception_task %}
+        <li>{{ task['event'] }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+<a href="/">返回</a>
+</body>
+</html>
